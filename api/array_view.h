@@ -92,7 +92,11 @@ enum : std::ptrdiff_t { kArrayViewVarSize = -4711 };
 // Base class for ArrayViews of fixed nonzero size.
 template <typename T, std::ptrdiff_t Size>
 class ArrayViewBase {
-  static_assert(Size > 0, "ArrayView size must be variable or non-negative");
+  static_assert(Size > 0, "ArrayView size must be variable or non-negative"); 
+  // static_assert는 #error와 비슷한 기능을 하는 컴파일 연산자. 
+  // #if Size <=0 
+  // #erorr "ArrayView size must be variable or non-negative"
+  // #endif
 
  public:
   ArrayViewBase(T* data, size_t size) : data_(data) {}

@@ -1,0 +1,189 @@
+▾ api/  : javascript web API implementaion?
+  ▸ audio/        : audio frame and mixer, used from ./audio, ./module, ./call
+  ▸ audio_codecs/ : g711, g722, ilbc, isac, L16, opus... wrapper of ./module/audio_coding/codecs/
+  ▸ call/         : No implementation, abstract class and structure "Transport", "PacketOption", call_factory, audio_sink
+  ▸ ortc/
+  ▸ stats/
+  ▸ test/
+  ▸ transport/
+  ▸ units/
+  ▸ video/
+  ▸ video_codecs/
+
+▾ audio/  : audio control login is implemented.
+  ▸ test/
+  ▸ utility/
+
+▸ build_overrides/ : This directory is used to allow us to customize variables that differ between WebRTC being built as standalone and as a part of Chromium.
+
+▸ call/ : RTP, RTCP, RTX stream handler. Why named call? What is RTX?
+
+▾ common_audio/ : audio processing utilities.
+  ▸ include/
+  ▸ mocks/
+  ▸ resampler/
+  ▸ signal_processing/
+  ▾ third_party/
+    ▸ fft4g/
+    ▸ spl_sqrt_floor/
+  ▸ vad/
+
+▾ common_video/ : video processing utilities. H.264 param parser, YUV utility functions.
+  ▸ h264/
+  ▸ include/
+  ▸ libyuv/
+
+▾ data/     : webrtc application resources. icon, beap...
+  ▸ audio_processing/
+  ▸ common_video/
+  ▸ rtp_rtcp/
+  ▸ voice_engine/
+
+▾ examples/ : webrtc examples. various application and platform.
+  ▸ aarproject/
+  ▸ androidapp/
+  ▸ androidjunit/
+  ▸ androidnativeapi/
+  ▸ androidtests/
+  ▸ objc/
+  ▸ objcnativeapi/
+  ▸ peerconnection/
+  ▸ relayserver/
+  ▸ stunprober/
+  ▸ stunserver/
+  ▸ turnserver/
+  ▸ unityplugin/
+
+▸ infra/    : This directory contains configuration files for infra services.
+
+▾ logging/  : logger.
+  ▾ rtc_event_log/
+    ▸ encoder/
+    ▸ events/
+    ▸ mock/
+    ▸ output/
+
+▾ media/    : media implementation used by modules. What is media? How WebRTC define?
+  ▸ base/
+  ▸ engine/
+  ▸ sctp/
+
+▾ modules/  : modules using media and used by API?
+  ▸ audio_coding/
+  ▸ audio_device/
+  ▸ audio_mixer/
+  ▸ audio_processing/
+  ▸ bitrate_controller/
+  ▸ congestion_controller/
+  ▸ desktop_capture/
+  ▸ include/
+  ▸ pacing/
+  ▸ remote_bitrate_estimator/
+  ▸ rtp_rtcp/
+  ▸ third_party/
+  ▸ utility/
+  ▸ video_capture/
+  ▸ video_coding/
+  ▸ video_processing/
+
+▸ ortc/   : ??? ortc, srtp
+
+▾ p2p/    : implementation for p2p communication. STUN
+  ▸ base/
+  ▸ client/
+  ▸ stunprober/
+
+▸ pc/     : PeerConnection is the implementation of the PeerConnection object as defined by the PeerConnectionInterface API surface.
+
+▾ resources/  : binary resource files.
+  ▸ audio_coding/
+  ▸ audio_device/
+  ▸ audio_processing/
+  ▸ images/
+  ▸ media/
+  ▸ network_tester/
+  ▸ remote_bitrate_estimator/
+  ▸ rtp_rtcp/
+  ▸ utility/
+  ▸ video_coding/
+  ▸ video_engine/
+  ▸ voice_engine/
+
+▾ rtc_base/   : basic utility classes for real-time communication.
+  ▸ experiments/
+  ▸ java/
+  ▸ memory/
+  ▸ numerics/
+  ▸ strings/
+  ▸ synchronization/
+  ▸ system/
+  ▾ third_party/
+    ▸ base64/
+    ▸ sigslot/
+  ▸ time/
+  ▸ win/
+
+▾ rtc_tools/    : Tools for real-time communication.
+  ▸ agc/
+  ▸ barcode_tools/
+  ▸ converter/
+  ▸ event_log_visualizer/
+  ▸ force_mic_volume_max/
+  ▸ frame_analyzer/
+  ▸ frame_editing/
+  ▸ loopback_test/
+  ▸ network_tester/
+  ▸ psnr_ssim_analyzer/
+  ▸ py_event_log_analyzer/
+  ▸ rtcbot/
+  ▸ testing/
+  ▸ unpack_aecdump/
+
+▾ sdk/    : provided API for android and objc.
+  ▾ android/
+    ▸ api/
+    ▸ instrumentationtests/
+    ▸ native_api/
+    ▸ native_unittests/
+    ▸ src/
+    ▸ tests/
+  ▸ objc/
+
+▸ stats/  : implementation of RTCStats
+
+▸ style-guide/ : coding convention
+
+▸ system_wrappers/ : OSAL
+
+▾ test/   : unit-test
+  ▸ android/
+  ▸ fuzzers/
+  ▸ gl/
+  ▸ ios/
+  ▸ linux/
+  ▸ mac/
+  ▸ testsupport/
+  ▸ win/
+
+▾ tools_webrtc/   : tool coded using python script, provided by webrtc.
+  ▸ android/
+  ▸ audio_quality/
+  ▸ autoroller/
+  ▸ coverage/
+  ▸ cpu/
+  ▸ ios/
+  ▸ libs/
+  ▸ matlab/
+  ▸ mb/
+  ▸ msan/
+  ▸ network_emulator/
+  ▸ presubmit_checks_lib/
+  ▸ sancov/
+  ▸ sanitizers/
+  ▸ sslroots/
+  ▸ ubsan/
+  ▸ video_quality_toolchain/
+  ▸ vim/
+
+▸ video/    : implementation of video stream.
+
